@@ -128,6 +128,9 @@
             if(/src=\"[^\s"]+/i.test(url)){
                 conUrl = url.match(/src=\"[^\s"]+/i)[0].substr(5);
             }
+            if(/src=\'[^\s']+/i.test(url)){
+                conUrl = url.match(/src=\"[^\s"]+/i)[0].substr(5);
+            }
             var newIframe = editor.document.createElement("iframe");
             var div;
             newIframe.setAttribute("src",/http:\/\/|https:\/\//ig.test(conUrl) ? conUrl : "http://"+conUrl);
